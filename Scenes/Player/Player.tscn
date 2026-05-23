@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cglesivhvhu3q"]
+
+[ext_resource type="Script" uid="uid://ccmtjlvpctern" path="res://Scripts/Player/player.gd" id="1_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://djnmuhkxao7qf" path="res://icon.svg" id="1_s0eop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft8w5"]
+size = Vector2(67, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h54ih"]
+size = Vector2(73, 70)
+
+[node name="Player" type="CharacterBody2D" unique_id=1213313319]
+collision_layer = 2
+script = ExtResource("1_ft8w5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=718470786]
+position = Vector2(-4.000004, 0)
+scale = Vector2(0.515625, 0.53125)
+texture = ExtResource("1_s0eop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933027671]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_ft8w5")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1037057468]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=834826652]
+position = Vector2(-2.5, -1)
+shape = SubResource("RectangleShape2D_h54ih")
+
+[node name="Shootpoint" type="Marker2D" parent="." unique_id=203082208]
+position = Vector2(47, -2)
+gizmo_extents = 50.0
