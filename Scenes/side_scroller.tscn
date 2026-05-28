@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cglesivhvhu3q" path="res://Scenes/Player/Player.tscn" id="1_5l4pe"]
 [ext_resource type="PackedScene" uid="uid://btkg0wfhaw24y" path="res://Scenes/UI/hud.tscn" id="2_nev8x"]
+[ext_resource type="PackedScene" uid="uid://bk5la4acduoep" path="res://Scenes/Enemies/enemy_static.tscn" id="3_grra8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4pe"]
 size = Vector2(1425, 183)
@@ -9,6 +10,7 @@ size = Vector2(1425, 183)
 [node name="SideScroller" type="Node2D" unique_id=1599965354]
 
 [node name="Player" parent="." unique_id=1213313319 instance=ExtResource("1_5l4pe")]
+z_index = 1
 position = Vector2(55, 102)
 
 [node name="FLoor" type="StaticBody2D" parent="." unique_id=2054889778]
@@ -19,3 +21,7 @@ shape = SubResource("RectangleShape2D_5l4pe")
 
 [node name="HUD" parent="FLoor" unique_id=1700544312 node_paths=PackedStringArray("player") instance=ExtResource("2_nev8x")]
 player = NodePath("../../Player")
+
+[node name="EnemyStatic" parent="." unique_id=39896627 instance=ExtResource("3_grra8")]
+position = Vector2(1058, 459)
+max_health = 5
