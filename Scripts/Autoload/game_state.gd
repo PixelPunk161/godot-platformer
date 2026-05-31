@@ -20,6 +20,9 @@ func lose_life() -> void:
 
 func game_over() -> void:
 	print("You Died!")
+	await get_tree().create_timer(2.0).timeout
+	reset()
+	get_tree().reload_current_scene()
 	
 func reset() -> void:
 	lives = STARTING_LIVES

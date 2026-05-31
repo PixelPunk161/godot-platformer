@@ -78,12 +78,14 @@ func _start_invicibility() -> void:
 func _die() -> void:
 	GameState.lose_life()
 	if GameState.lives > 0:
-		health = MAX_HEALTH
-		health_changed.emit(health)
-		global_position = spawn_position
-		is_invincible = false
-		sprite.modulate = Color.WHITE
-				
+		_respawn()
+	
+func  _respawn() -> void:
+	health = MAX_HEALTH
+	health_changed.emit(health)
+	global_position = spawn_position
+	_start_invicibility()
+
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area is Hitbox:
 		take_damage(area.damage)
