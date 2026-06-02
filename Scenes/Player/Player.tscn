@@ -9,6 +9,9 @@ size = Vector2(67, 68)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h54ih"]
 size = Vector2(73, 70)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ude3g"]
+size = Vector2(66, 68)
+
 [node name="Player" type="CharacterBody2D" unique_id=1213313319]
 collision_layer = 2
 script = ExtResource("1_ft8w5")
@@ -19,17 +22,29 @@ scale = Vector2(0.515625, 0.53125)
 texture = ExtResource("1_s0eop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933027671]
+visible = false
 position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_ft8w5")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1037057468]
+visible = false
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=834826652]
+visible = false
 position = Vector2(-2.5, -1)
 shape = SubResource("RectangleShape2D_h54ih")
 
 [node name="Shootpoint" type="Marker2D" parent="." unique_id=203082208]
+visible = false
 position = Vector2(47, -2)
 gizmo_extents = 50.0
+
+[node name="InteractDetector" type="Area2D" parent="." unique_id=804012420]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractDetector" unique_id=61221117]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_ude3g")

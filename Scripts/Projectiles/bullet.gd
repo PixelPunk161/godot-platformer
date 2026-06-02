@@ -8,7 +8,8 @@ var direction: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	area_entered.connect(_on_area_entered)
+	area_entered.connect(_on_hit)
+	body_entered.connect(_on_hit)
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
@@ -17,5 +18,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position.x += SPEED * direction * delta
 
-func _on_area_entered(_area: Area2D) -> void:
+func _on_hit(_thing) -> void:
 	queue_free()

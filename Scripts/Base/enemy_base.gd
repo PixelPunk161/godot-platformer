@@ -13,6 +13,7 @@ var base_color: Color
 
 
 func _ready() -> void:
+	add_to_group("enemies")
 	health = max_health
 	base_color = sprite.modulate
 	hurtbox.area_entered.connect(_on_hurtbox_area_entered)

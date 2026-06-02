@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cglesivhvhu3q" path="res://Scenes/Player/Player.tscn" id="1_5l4pe"]
 [ext_resource type="PackedScene" uid="uid://btkg0wfhaw24y" path="res://Scenes/UI/hud.tscn" id="2_nev8x"]
 [ext_resource type="PackedScene" uid="uid://bk5la4acduoep" path="res://Scenes/Enemies/enemy_static.tscn" id="3_grra8"]
-[ext_resource type="PackedScene" uid="uid://7dxmogwayfdy" path="res://Scenes/Enemies/enemy_patrol.tscn" id="4_3egk7"]
+[ext_resource type="PackedScene" uid="uid://ct4j0irpdkqqk" path="res://Scenes/Interactables/ladder.tscn" id="4_3egk7"]
+[ext_resource type="PackedScene" uid="uid://suehnwgf681b" path="res://Scenes/Interactables/button.tscn" id="5_jhddm"]
+[ext_resource type="PackedScene" uid="uid://cqe4kecg0f88e" path="res://Scenes/Interactables/gate.tscn" id="6_8usrq"]
+[ext_resource type="PackedScene" uid="uid://ch4ce7f32un00" path="res://Scenes/Interactables/level_exit.tscn" id="7_8usrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l4pe"]
 size = Vector2(1425, 183)
@@ -24,9 +27,18 @@ shape = SubResource("RectangleShape2D_5l4pe")
 player = NodePath("../../Player")
 
 [node name="EnemyStatic" parent="." unique_id=39896627 instance=ExtResource("3_grra8")]
-position = Vector2(1032, 120)
+position = Vector2(742, 482)
 max_health = 5
 
-[node name="EnemyPatrol" parent="." unique_id=895212821 instance=ExtResource("4_3egk7")]
-position = Vector2(501, 473)
-move_speed = 500.0
+[node name="Ladder" parent="." unique_id=639576137 instance=ExtResource("4_3egk7")]
+position = Vector2(331, 417)
+
+[node name="Button" parent="." unique_id=1067308712 node_paths=PackedStringArray("target") instance=ExtResource("5_jhddm")]
+position = Vector2(433, 293)
+target = NodePath("../Gate")
+
+[node name="Gate" parent="." unique_id=1154726088 instance=ExtResource("6_8usrq")]
+position = Vector2(935, 356)
+
+[node name="LevelExit" parent="." unique_id=856192290 instance=ExtResource("7_8usrq")]
+position = Vector2(1084, 502)

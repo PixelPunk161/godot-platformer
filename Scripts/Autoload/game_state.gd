@@ -30,11 +30,11 @@ func reset() -> void:
 	lives_changed.emit(lives)
 	score_changed.emit(score)
 
+func complete_level() -> void:
+	print("level complete!")
+	await get_tree().create_timer(2.0).timeout
+	get_tree().reload_current_scene()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("GameState Loaded. Lives: ", lives, ", Score: ", score)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass

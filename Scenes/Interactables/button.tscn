@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://suehnwgf681b"]
+
+[ext_resource type="Script" uid="uid://d05gjjhcwrkga" path="res://Scripts/Interactables/button.gd" id="1_6pgxd"]
+[ext_resource type="Texture2D" uid="uid://djnmuhkxao7qf" path="res://icon.svg" id="2_84ywo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_intjf"]
+size = Vector2(30, 32)
+
+[node name="Button" type="Area2D" unique_id=1067308712]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_6pgxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=156779854]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_intjf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=229011964]
+modulate = Color(0.60142785, 0, 0.32010448, 1)
+self_modulate = Color(0.5703228, 0.74821466, 0.99218804, 1)
+position = Vector2(1, 0)
+scale = Vector2(0.2421875, 0.25)
+texture = ExtResource("2_84ywo")
