@@ -5,7 +5,7 @@ extends EnemyBase
 var direction: int = -1
 
 func _movement(_delta: float) -> void:
-	velocity.x = move_speed * direction
 	if is_on_wall():
 		direction *= -1
 		sprite.flip_h = direction == -1
+	velocity.x = move_speed * direction

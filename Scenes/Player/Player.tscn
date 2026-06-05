@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cglesivhvhu3q"]
 
 [ext_resource type="Script" uid="uid://ccmtjlvpctern" path="res://Scripts/Player/player.gd" id="1_ft8w5"]
-[ext_resource type="Texture2D" uid="uid://djnmuhkxao7qf" path="res://icon.svg" id="1_s0eop"]
+[ext_resource type="Texture2D" uid="uid://p5lj1rn1jxsp" path="res://Assets/Sprites/Player/Skunk.png" id="2_ft8w5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft8w5"]
 size = Vector2(67, 68)
@@ -10,16 +10,16 @@ size = Vector2(67, 68)
 size = Vector2(73, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ude3g"]
-size = Vector2(66, 68)
+size = Vector2(74, 97)
 
 [node name="Player" type="CharacterBody2D" unique_id=1213313319]
 collision_layer = 2
 script = ExtResource("1_ft8w5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=718470786]
-position = Vector2(-4.000004, 0)
-scale = Vector2(0.515625, 0.53125)
-texture = ExtResource("1_s0eop")
+position = Vector2(-0.91210985, -7.7382765)
+scale = Vector2(0.09076891, 0.092921406)
+texture = ExtResource("2_ft8w5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933027671]
 visible = false
@@ -46,5 +46,9 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractDetector" unique_id=61221117]
-position = Vector2(-4, 0)
+position = Vector2(2, -11.5)
 shape = SubResource("RectangleShape2D_ude3g")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1313549009]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true

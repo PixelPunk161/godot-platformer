@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bpxhkcp5415be"]
+
+[ext_resource type="Script" uid="uid://tn35dkvt8fi0" path="res://Scripts/UI/title_screen.gd" id="1_xsyet"]
+
+[node name="TitleScreen" type="Control" unique_id=1278088910]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xsyet")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2085053302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00055944856, 1.504086e-09, 0.057187244, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1949338067]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -298.0
+offset_right = 298.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "ROGUE TAXIDERMY"
+
+[node name="Prompt" type="Label" parent="." unique_id=402897199]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -11.5
+offset_right = 89.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "PRESS ENTER TO START"
+
+[node name="BlinkTimer" type="Timer" parent="." unique_id=312584975]
+wait_time = 0.5
+autostart = true
